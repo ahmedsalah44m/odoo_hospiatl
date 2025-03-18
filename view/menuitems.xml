@@ -1,0 +1,22 @@
+<odoo>
+<!--     root 0   -->
+    <menuitem name="Hospital" id="hospital_root" sequence="0"/>
+    <!--  root 1  -->
+    <menuitem name="Resources" id="hospital_resources" parent="hospital_root" sequence="0"/>
+
+    <!--  root 2  -->
+    <menuitem name="Hospital Patients" id="hospital_patients" sequence="0" parent="hospital_resources" action="hospital_patients_window_action"/>
+    <menuitem id="hospital_doctors_menu" parent="hospital_resources" sequence="1" name="Doctors" action="hospital_doctors_window_action"/>
+
+<!--  root 1  -->
+    <menuitem name="Transactions" id="hospital_transactions" parent="hospital_root" sequence="1"/>
+<!--  root 2  -->
+
+    <menuitem name="Appointments" id="hospital_Appointments"  action="hospital_appointments_window_action" parent="hospital_transactions" sequence='0'/>
+
+
+
+
+
+
+</odoo>

@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+
+        <record id="hospital_appointments_tree" model="ir.ui.view">
+            <field name="name">hospital appointments tree</field>
+            <field name="model">my.appointments</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="patient_id"/>
+                    <field name="app_date"/>
+                    <field name="patients_age"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="hospital_appointments_form" model="ir.ui.view">
+            <field name="name">hospital appointments form</field>
+            <field name="model">my.appointments</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1 string="name">
+                                <field name="name" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="patient_id"/>
+                            </group>
+                            <group>
+                                <field name="app_date"/>
+                                <field name="patients_age"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="notes"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_ids" wedgit="mail_thread" options="{'post_refresh':'recipients'}" />
+                        <field name="activity_ids" wedgit="mail_activity"/>
+                        <field name="message_follower_ids" wedgit="mail_followers"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="hospital_appointments_window_action" model="ir.actions.act_window">
+            <field name="name">Appointments</field>
+            <field name="res_model">my.appointments</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="xml">
+                <p class="o_view_nocontent_smiling_face">
+                    Add Appointment ...
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

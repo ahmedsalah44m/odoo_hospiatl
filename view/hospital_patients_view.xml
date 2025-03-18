@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <record id="res_partner_extensions_hospital" model="ir.ui.view">
+            <field name="name">res partner extensions hospital</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="shopping_app_odoo_16.new_contacts_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='my_note']" position="after">
+                    <group string="Personal Info">
+                        <field name="birthday"/>
+                        <field name="age"/>
+                        <field name="is_patient"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+
+
+
+        <record id="hospital_patients_window_action" model="ir.actions.act_window">
+            <field name="name">Hospital Patients</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="domain">[('is_patient','=',True)]</field>
+            <field name="help" type="xml">
+                <p class="o_view_nocontent_smiling_face">
+
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
