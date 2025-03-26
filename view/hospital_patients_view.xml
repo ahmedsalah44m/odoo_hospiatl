@@ -5,6 +5,15 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="shopping_app_odoo_16.new_contacts_form_view"/>
             <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button  name="get_patient_appointments" class="oe_stat_button" icon="fa-calendar-plus-o"
+                     type="object" invisible="is_patient == False">
+                        <field string="Appointments" name="appointments_count" widget="statinfo" />
+
+                    </button>
+                </xpath>
+
+
                 <xpath expr="//field[@name='my_note']" position="after">
                     <group string="Personal Info">
                         <field name="birthday"/>

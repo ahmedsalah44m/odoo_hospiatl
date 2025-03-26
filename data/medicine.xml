@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="True">
+    <data>
+        <record id="medicine_1" model="the.medicine">
+            <field name="name">medicine 3</field>
+            <field name="effective_material">bla bla bal +2 </field>
+        </record>
+
+        <record id="medicine_2" model="the.medicine">
+            <field name="name">medicine 2</field>
+            <field name="effective_material">bla bla bal +3 </field>
+        </record>
+
+    </data>
+</odoo>

@@ -9,6 +9,8 @@
     'data':[
         'view/hospital_patients_view.xml',
         'view/doctors_view.xml',
+        'view/medicine.xml',
+        'data/medicine.xml',
         'view/templates.xml',
         'security/ir.model.access.csv',
         'view/appointments.xml',

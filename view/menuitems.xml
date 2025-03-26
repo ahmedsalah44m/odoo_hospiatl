@@ -12,7 +12,8 @@
     <menuitem name="Transactions" id="hospital_transactions" parent="hospital_root" sequence="1"/>
 <!--  root 2  -->
 
-    <menuitem name="Appointments" id="hospital_Appointments"  action="hospital_appointments_window_action" parent="hospital_transactions" sequence='0'/>
+    <menuitem name="Appointments" id="hospital_appointments"  action="hospital_appointments_window_action" parent="hospital_transactions" sequence='0'/>
+    <menuitem name="Medicine" id="hospital_medicine"  action="hospital_the_medicine_window_action" parent="hospital_transactions" sequence='1'/>
 
 
 

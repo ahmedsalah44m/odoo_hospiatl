@@ -1,4 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
 access_my_appointments,access my appointments,model_my_appointments,base.group_user,1,1,1,1
+access_my_prescription,access prescription,model_prescription,base.group_user,1,1,1,1
+access_the_medicine,access the medicine,model_the_medicine,base.group_user,1,1,1,1
 
