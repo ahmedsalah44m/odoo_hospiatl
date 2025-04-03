@@ -57,6 +57,7 @@ class MyAppointments(models.Model):
         result = super(MyAppointments,self).create(values)
         return result
 
+
     def confirm_action(self):
         for r in self:
             r.status = "confirm"
@@ -83,11 +84,30 @@ class Prescription(models.Model):
     name = fields.Char(string="Medicine Name")
     notes = fields.Text(string="Notes")
     appointment_id = fields.Many2one("my.appointments")
-    medicine_id = fields.Many2one("the.medicine")
+    medicine_id = fields.Many2one("the.medicine.xml")
 
 class Medicine(models.Model):
-    _name = "the.medicine"
+    _name = "the.medicine.xml"
 
     name =fields.Char()
     effective_material = fields.Char()
     prescription_ids = fields.One2many('prescription','medicine_id')
+
+# class Appointment(models.Model):
+#     _name = "hospital.appointment"
+#
+#     name = fields.Char(required=True,readonly=True,index=True,default=lambda self:_('new app') ,copy=False)
+#     patient_id = fields.Many2one('res.partner',domain="[('is_patient','=',True)]" , string='Patient')
+#     age =  fields.Integer(related='patient_id.age')
+#     date = fields.Date(string='app date')
+#     notes = fields.Text(string='Notes' )
+#
+#     @api.model
+#     def create(self,values):
+#         if values.get('name',_('new app')) == _('new app'):
+#             values['name'] = self.env['ir.sequence'].next_by_code("") or _('new app')
+#         result = super(Appointment,self).create(values)
+#         return result
+
+
+
